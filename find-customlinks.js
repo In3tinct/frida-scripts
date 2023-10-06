@@ -14,9 +14,9 @@ Interceptor.attach(ObjC.classes.UIApplication['- applicationOpenURL:'].implement
 });
 
 //Interceptor for custom links in Swift app with SceneDelegate
-//Change the package here "hackingwithswift" with the package you project has, for hooking swift functions with ObjC class it requires
+//Change the package here "packagename" with the package you project has, for hooking swift functions with ObjC class it requires
 //to append project name
-var hook = ObjC.classes["hackingwithswift.SceneDelegate"]["- scene:openURLContexts:"];
+var hook = ObjC.classes["packagename.SceneDelegate"]["- scene:openURLContexts:"];
 Interceptor.attach(hook.implementation, {
   
   onEnter: function (args) {
